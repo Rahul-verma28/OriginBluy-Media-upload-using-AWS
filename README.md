@@ -1,50 +1,77 @@
-# React + TypeScript + Vite
+Live - https://origin-bluy-media-upload-using-aws.vercel.app
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Media Capture and Storage Web Application
 
-Currently, two official plugins are available:
+## Project Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project is a full-stack web application built using the MERN stack (MongoDB, Express.js, React.js, Node.js). It allows users to upload, view, and manage media files (images and videos). The media files are stored securely using AWS S3 or in a backend folder with Multer. The application showcases backend skills, API handling, and AWS integration.
 
-## Expanding the ESLint configuration
+https://github.com/user-attachments/assets/69ca8a5c-71cd-41fc-a6f9-69843cf426a7
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Features
 
-- Configure the top-level `parserOptions` property like this:
+1. **User Authentication**:
+   - User registration and login using JWT authentication.
+   - Password hashing with bcrypt for security.
+   - Token-based access to protected endpoints.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+2. **Media Upload & Management**:
+   - Upload images and videos from local storage.
+   - Store media securely using AWS S3 or Multer.
+   - Media gallery to view, delete, and manage uploaded media.
+   - Filter media by type (images/videos).
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+3. **Backend API & Database**:
+   - API endpoints for user authentication, media upload, retrieval, and deletion.
+   - MongoDB for database storage with Mongoose ORM.
+   - Store media metadata (filename, URL, upload date, user reference).
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+4. **UI/UX Design**:
+   - React.js with Material-UI/Tailwind for a clean and responsive design.
+   - Dashboard to view uploaded media in grid/list format.
+   - Preview option before uploading media.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+5. **State Management**:
+   - Redux Toolkit or Context API for managing authentication and media state.
+
+6. **AWS Integration**:
+   - Configure AWS S3 bucket for media storage.
+   - Use AWS SDK for secure upload and retrieval.
+   - Proper IAM permissions for access control.
+
+7. **Error Handling & Validation**:
+   - Validate user input for authentication and file uploads.
+   - Try-catch blocks for API error handling.
+   - Success and error messages for user feedback.
+
+8. **Deployment**:
+   - Backend deployed using Render/Heroku/Vercel.
+   - Frontend deployed using Vercel/Netlify.
+   - MongoDB Atlas for cloud database storage.
+
+## Tech Stack
+
+- **Frontend**: React.js, Redux Toolkit/Context API, Material-UI/Tailwind
+- **Backend**: Node.js, Express.js
+- **Database**: MongoDB (Mongoose)
+- **Storage**: AWS S3 / Multer
+- **Authentication**: JWT (bcrypt for password hashing)
+- **Deployment**: Vercel/Netlify (Frontend), Render/Heroku (Backend), MongoDB Atlas
+
+## Live Link
+
+[Live Demo](https://origin-bluy-media-upload-using-aws.vercel.app/)
+
+## GitHub Repository
+
+[GitHub Repo](https://github.com/Rahul-verma28/OriginBluy-Media-upload-using-AWS)
+
+
+## .env
+MONGO_URI=<your_mongodb_uri>
+JWT_SECRET=<your_jwt_secret>
+AWS_ACCESS_KEY_ID=<your_aws_access_key_id>
+AWS_SECRET_ACCESS_KEY=<your_aws_secret_access_key>
+AWS_BUCKET_NAME=<your_aws_bucket_name>
+
+
